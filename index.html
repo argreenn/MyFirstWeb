@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+  <style>
+
+    /**{*/
+    /*  !*u布局技巧,看到所有盒子的边框*!*/
+    /*  border: 1px solid black;*/
+    /*}*/
+
+    /*背景效果*/
+    .air {
+      background:
+        linear-gradient(to bottom, #D5DEE7 0%, #E8EBF2 50%, #E2E7ED 100%),
+        linear-gradient(to bottom, rgba(0,0,0,0.02) 50%, rgba(255,255,255,0.02) 61%, rgba(0,0,0,0.02) 73%),
+        linear-gradient(33deg, rgba(255,255,255,0.20) 0%, rgba(0,0,0,0.20) 100%);
+      background-blend-mode: normal,color-burn;
+    }
+    .ice {
+      background-color: #CDDCDC;
+      background-image:
+        radial-gradient(at 50% 100%, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%),
+        linear-gradient(to bottom, rgba(255,255,255,0.25) 0%, rgba(0,0,0,0.25) 100%);
+      background-blend-mode: screen, overlay;
+    }
+
+    /*字体效果*/
+    .hollow{
+      text-shadow:  0 0 2px hsl(40, 28.57% , 28.82%),0 0 2px hsl(40, 28.57% , 28.82%), 0 0 2px hsl(40, 28.57% , 28.82%);/*多个叠加*/
+      font-size: 30px;
+      color: #211f1f;
+    }
+
+    *{
+      box-sizing: border-box;
+    }
+
+    body {
+      padding: 10px;
+      background-color: #f1f1f1;
+    }
+
+    /*标题栏*/
+    .header {
+      padding: 25px;
+      text-align: center;
+      background: white;
+    }
+
+    /*标题*/
+    .header h1 {
+      font-size: 50px;
+      align-items: center;
+    }
+    .header p {
+      align-items: center;
+    }
+
+    /*导航栏*/
+    .topnav {
+      overflow: hidden;
+      background-color: #333;
+    }
+    /*设置链接样式*/
+    .topnav a {
+      float:left;
+      display: block;
+      background-color: #333;
+      color: white;
+      padding: 14px 16px;/*上下边|左右边*/
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    /* 创建两个不相等的彼此并排的浮动列 */
+    /* 左列 */
+    .left_column {
+      float: left;
+      width: 75%;
+    }
+
+    /* 右列 */
+    .right_column {
+      float: left;
+      width: 25%;
+      background-color: #f1f1f1;
+      padding-left: 20px;
+    }
+
+    /* 为文章添加卡片效果 */
+    .card {
+      background-color: white;
+      padding: 20px;
+      margin-top: 20px;
+    }
+
+    /*after:创建一个伪元素，作为已选中元素的最后一个子元素。
+    通常会配合content属性来为该元素添加装饰内容
+    */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    /*  指定一个元素是否必须移动 (清除浮动后)
+    到在它之前的浮动元素下面。
+    clear 属性适用于浮动和非浮动元素
+    */
+    }
+    /* 伪图像 */
+    .fakeimg {
+      background-color: #aaa;
+      width: 100%;
+      padding: 20px;
+    }
+    /* 响应式布局 - 当屏幕的宽度小于 800 像素时，使两列堆叠而不是并排 */
+    @media screen and (max-width: 800px) {
+      .left_column, .right_column {
+        width: 100%;
+        padding: 0;
+      }
+    }
+
+    /* 响应式布局 - 当屏幕的宽度小于 400 像素时，使导航链接堆叠而不是并排 */
+    @media screen and (max-width: 400px) {
+      .topnav a {
+        float: none;
+        width: 100%;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+<!--标题栏-->
+<div class="header">
+  <h1>这里是你it之路开始的地方</h1>
+  <p>
+    让坚持得到反馈,让坚持成为习惯,别让思考浪费在想象上
+  </p>
+</div>
+
+<!--导航栏-->
+<div class="topnav">
+  <a href="#">首页</a>
+  <a href="#">内容</a>
+  <a href="#">设置</a>
+  <a href="#" style="float: right">帮助</a>
+</div>
+
+<div class="row">
+  <!--内容栏_左边 -->
+  <div class="left_column">
+    <div class="card">
+      <h2>创立个人博客3.0</h2>
+      <h5>2024.4.20</h5>
+      <p>
+        经历前两天的教训总结,以及翻查各种资料后,终于在16:01
+        正式完工,初步的形态形成,也是一种激励
+        在version 1.0版本成立后,接下来的工作:
+      </p>
+      <ol>
+        <li><a>网站部署上线到互联网上</a></li>
+        <li><a>继续优化页面,增加页面功能</a></li>
+        <li><a>学习JavaScript</a></li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h2>创立个人博客2.0</h2>
+      <h5>2024.4.19</h5>
+      <p>
+        尽管今天做出了修改,不过再忙碌一晚上后,被两种导航栏的模式
+        所困扰,最后也不了了之~~~~
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>创立个人博客1.0</h2>
+      <h5>2024.4.18</h5>
+      <p>
+        今天下午兴致冲冲,想通过建立博客磨练技术,再画好网站页面之后开始捣鼓,
+        结果再创建导航栏时屡屡碰壁,最后导致整体页面崩塌,遂放弃
+      </p>
+    </div>
+  </div>
+
+
+  <!--内容栏_右边-->
+  <div class="right_column">
+    <div class="card">
+      <h2>关于我们</h2>
+      <!--放图片待定-->
+      <p>未来的你是否能像这个下午一样充满着创作的热情</p>
+    </div>
+
+    <div class="card">
+      <h2>个人信息</h2>
+    </div>
+  </div>
+
+</div>
+
+
+</body>
+</html>
