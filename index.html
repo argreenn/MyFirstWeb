@@ -5,8 +5,11 @@
 <head>
   <meta charset="UTF-8">
   <title>开发日记</title>
+  <!--图案库(Font Awesome)-->
+<!--  <link rel="stylesheet" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/4.7.0/css/font-awesome.min.css">-->
 
   <style>
+
 
     /**{*/
     /*  !*u布局技巧,看到所有盒子的边框*!*/
@@ -258,22 +261,20 @@
 
   <!-- 按钮  -->
     <div style="text-align: center" class="flex flex-col right-bottom">
-      <button >
-        新建
-      </button>
+
+      <button id="add"></button>
+      <script>
+
+        function jumpToWrite() {
+          window.location.href = "https://argreenn.github.io/MyFirstWeb/write"
+        }
+      </script>
+
+      <input type="button" value="+" onclick=jumpToWrite()>
+
     </div>
 
-    <script>
-      const btn = document.querySelector("button");
-
-      btn.addEventListener("click", () => {
-
-      });
-
-    </script>
   </div>
-
-
 
 </div>
 
