@@ -4,7 +4,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>开发日记</title>
 
   <style>
 
@@ -45,8 +45,33 @@
       background-color: #f1f1f1;
     }
 
+    .flex {
+      display: flex;
+    }
+
+    .flex-col {
+      flex-direction: column;
+    }
+
+    .right-bottom {
+      justify-content: end;
+      align-items: end;
+    }
+
+    button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: auto;
+      background-color: white;
+      width: 75px;
+      height: 75px;
+      border-radius: 50%;
+    }
+
     /*标题栏*/
     .header {
+      display: block;
       padding: 25px;
       text-align: center;
       background: white;
@@ -65,6 +90,11 @@
     .topnav {
       overflow: hidden;
       background-color: #333;
+    }
+
+    .tap-control {
+      position: sticky;
+      top:0;
     }
     /*设置链接样式*/
     .topnav a {
@@ -91,10 +121,16 @@
 
     /* 右列 */
     .right_column {
+      position: fixed;
       float: left;
       width: 25%;
       background-color: #f1f1f1;
       padding-left: 20px;
+    }
+
+    .right-control {
+      position: sticky;
+      top:50px;
     }
 
     /* 为文章添加卡片效果 */
@@ -152,9 +188,9 @@
 </div>
 
 <!--导航栏-->
-<div class="topnav">
+<div class="topnav tap-control">
   <a href="#">首页</a>
-  <a href="#">内容</a>
+  <a href="#">资源</a>
   <a href="#">设置</a>
   <a href="#" style="float: right">帮助</a>
 </div>
@@ -194,11 +230,22 @@
         结果再创建导航栏时屡屡碰壁,最后导致整体页面崩塌,遂放弃
       </p>
     </div>
+
+    <div class="card">
+      <h2>创立个人博客1.0</h2>
+      <h5>2024.4.18</h5>
+      <p>
+        今天下午兴致冲冲,想通过建立博客磨练技术,再画好网站页面之后开始捣鼓,
+        结果再创建导航栏时屡屡碰壁,最后导致整体页面崩塌,遂放弃
+      </p>
+    </div>
+
+
   </div>
 
 
   <!--内容栏_右边-->
-  <div class="right_column">
+  <div class="right_column right-control">
     <div class="card">
       <h2>关于我们</h2>
       <!--放图片待定-->
@@ -208,7 +255,25 @@
     <div class="card">
       <h2>个人信息</h2>
     </div>
+
+  <!-- 按钮  -->
+    <div style="text-align: center" class="flex flex-col right-bottom">
+      <button >
+        新建
+      </button>
+    </div>
+
+    <script>
+      const btn = document.querySelector("button");
+
+      btn.addEventListener("click", () => {
+
+      });
+
+    </script>
   </div>
+
+
 
 </div>
 
